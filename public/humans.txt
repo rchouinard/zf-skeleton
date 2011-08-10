@@ -1,0 +1,10 @@
+/* HUMANS.TXT - http://humanstxt.org */
+
+/* TEAM */
+    Developer: Ryan Chouinard
+    Site: http://ryanchouinard.com
+    Twitter: @rchouinard
+    From: Charlotte, NC, USA
+
+/* SITE */
+    Components: PHP, Zend Framework

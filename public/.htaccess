@@ -1,0 +1,85 @@
+##
+# Mime type adjustments
+#
+# Not every system is consistent with mime types, so we define the most common
+# here, based on RFCs and general knowledge around the Internet.
+##
+<IfModule mime_module>
+    AddType application/javascript  js
+    AddType image/gif               gif
+    AddType image/jpeg              jpg jpeg
+    AddType image/png               png
+    AddType image/x-icon            ico
+    AddType text/css                css
+    AddType text/plain              txt
+</IfModule>
+
+##
+# On the fly compression
+#
+# Requires mod_deflate, and will use mod_filter if it's available.
+##
+<IfModule deflate_module>
+    <IfModule filter_module>
+        FilterDeclare COMPRESS
+        FilterProvider COMPRESS DEFLATE resp=Content-Type /text/(html|plain|css|xml)/
+        FilterProvider COMPRESS DEFLATE resp=Content-Type /application/(javascript|xml|json)/
+        FilterChain COMPRESS
+        FilterProtocol COMPRESS change=yes;byteranges=no
+    </IfModule>
+    <IfModule !filter_module>
+        AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+        AddOutputFilterByType DEFLATE application/javascript application/xml
+        AddOutputFilterByType DEFLATE application/json
+    </IfModule>
+</IfModule>
+
+##
+# Content cache control
+#
+# Default to no caching, with sane expiration times for common media types. Both
+# image/x-icon and text/plain have shorter expiration times so that changes to
+# the favicon or robots.txt are picked up sooner.
+##
+<IfModule expires_module>
+    ExpiresActive On
+    ExpiresDefault "now"
+    ExpiresByType application/javascript    "access plus 30 days"
+    ExpiresByType image/gif                 "access plus 30 days"
+    ExpiresByType image/jpeg                "access plus 30 days"
+    ExpiresByType image/png                 "access plus 30 days"
+    ExpiresByType image/x-icon              "access plus 12 hours"
+    ExpiresByType text/css                  "access plus 30 days"
+    ExpiresByType text/plain                "access plus 12 hours"
+
+    <IfModule headers_module>
+        Header append Cache-Control "public"
+    </IfModule>
+</IfModule>
+
+##
+# ETag removal
+##
+FileETag None
+<IfModule headers_module>
+    Header unset ETag
+</IfModule>
+
+##
+# UTF-8 encoding
+##
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js
+
+##
+# Rewrite Rules
+#
+# Since mod_rewrite is required for the application to work, the following is
+# not wrapped in an IfModule block.
+##
+RewriteEngine On
+
+# Zend MVC rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !\.(js|ico|txt|gif|jpg|png|css)$ index.php [QSA,L]

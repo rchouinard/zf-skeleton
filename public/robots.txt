@@ -1,0 +1,5 @@
+# ROBOTS.TXT - http://www.robotstxt.org #
+
+# Disallow crawling/indexing of files under /media
+User-agent: *
+Disallow: /media/
