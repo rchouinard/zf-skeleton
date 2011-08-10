@@ -1,0 +1,48 @@
+<?php
+/**
+ * Default application layout
+ *
+ * @package ZF-Skeleton
+ * @subpackage Views
+ * @author Ryan Chouinard <rchouinard@gmail.com>
+ * @link https://github.com/rchouinard/zf-skeleton
+ */
+
+echo $this->doctype();
+?>
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+
+<base href="<?php echo $this->baseUrl('/'); ?>">
+
+<?php echo $this->headMeta(); ?>
+
+<?php echo $this->headTitle('ZF-Skeleton')
+    ->setSeparator(' | '); ?>
+
+<?php echo $this->headLink()
+    ->prependStylesheet('media/styles/site.css')
+    ->headLink(array ('rel' => 'shortcut icon', 'href' => 'favicon.ico')); ?>
+
+<?php echo $this->headScript()
+    ->appendFile('media/vendor/modernizr-2.0.6.min.js'); ?>
+
+<?php echo $this->headStyle(); ?>
+
+</head>
+
+<body>
+
+<?php echo $this->layout()->content;?>
+
+<?php echo $this->inlineScript()
+    ->prependFile('media/vendor/selectivizr-1.0.2.min.js')
+    ->prependFile('media/vendor/jquery-1.6.2.min.js'); ?>
+
+</body>
+</html>
