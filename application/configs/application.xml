@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+s
+    <!-- Define settings for the production environment -->
+    <production>
+
+        <!-- Override settings from php.ini -->
+        <phpSettings display_errors="0" display_startup_errors="0" memoery_limit="32M">
+            <date timezone="America/New_York" />
+        </phpSettings>
+
+        <!-- Configure the include path -->
+        <includePaths>
+            <library value="../library" />
+        </includePaths>
+
+        <!-- Define the default bootstrap -->
+        <bootstrap path="../application/modules/default/Bootstrap.php" class="Bootstrap" />
+
+        <!-- Configure various application resources -->
+        <resources>
+
+            <frontController>
+                <moduleDirectory value="../application/modules" />
+                <params displayExceptions="0" />
+            </frontController>
+
+            <modules />
+
+            <layout layoutPath="../application/modules/default/views/layouts" layout="default" />
+
+            <view doctype="HTML5" encoding="UTF-8" charset="UTF-8" />
+
+        </resources>
+
+    </production>
+
+    <!-- Define settings for the development environment -->
+    <development zf:extends="production">
+
+        <phpSettings display_errors="1" display_startup_errors="1" />
+
+        <resources>
+
+            <frontController>
+                <params displayExceptions="1" />
+            </frontController>
+
+        </resources>
+
+    </development>
+
+</configdata>
