@@ -16,3 +16,4 @@ These components are taken from, or are unique enough to credit, other projects 
  * **Modernizr** - A copy of [Modernizr](http://www.modernizr.com) 2.0.6 is included.
  * **Selectivizr** - A copy of [Selectivizr](http://selectivizr.com) 1.0.2 is included.
  * **jQuery** - A copy of [jQuery](http://jquery.com) 1.6.2 is included.
+ * **ZFDebug** - [ZFDebug](http://code.google.com/p/zfdebug/) is included by default for the development environment. The version included is from [leek's](https://github.com/leek) [fork](https://github.com/leek/zfdebug), which includes an application resource.
