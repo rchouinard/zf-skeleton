@@ -58,12 +58,14 @@
             </frontController>
 
             <zfdebug>
-                <Exception />
-                <File />
-                <Memory />
-                <Registry />
-                <Time />
-                <Variables />
+                <plugins>
+                    <Exception />
+                    <File />
+                    <Memory />
+                    <Registry />
+                    <Time />
+                    <Variables />
+                </plugins>
             </zfdebug>
 
         </resources>
