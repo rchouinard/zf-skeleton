@@ -59,12 +59,16 @@
 
             <zfdebug>
                 <plugins>
-                    <Exception />
-                    <File />
-                    <Memory />
-                    <Registry />
-                    <Time />
-                    <Variables />
+                    <!--<auth />-->
+                    <!--<cache />-->
+                    <!--<database />-->
+                    <exception />
+                    <file />
+                    <html />
+                    <!--<log />-->
+                    <memory />
+                    <time />
+                    <variables />
                 </plugins>
             </zfdebug>
 
