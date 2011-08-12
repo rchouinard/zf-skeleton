@@ -43,11 +43,28 @@
 
         <phpSettings display_errors="1" display_startup_errors="1" />
 
+        <autoloaderNamespaces>
+            <zfdebug value="ZFDebug_" />
+        </autoloaderNamespaces>
+
+        <pluginpaths>
+            <ZFDebug_Application_Resource_ value="ZFDebug/Application/Resource" />
+        </pluginpaths>
+
         <resources>
 
             <frontController>
                 <params displayExceptions="1" />
             </frontController>
+
+            <zfdebug>
+                <Exception />
+                <File />
+                <Memory />
+                <Registry />
+                <Time />
+                <Variables />
+            </zfdebug>
 
         </resources>
 
