@@ -30,7 +30,7 @@ echo $this->doctype();
     ->headLink(array ('rel' => 'shortcut icon', 'href' => 'favicon.ico')); ?>
 
 <?php echo $this->headScript()
-    ->appendFile('media/vendor/modernizr-2.0.6.min.js'); ?>
+    ->appendFile('media/vendor/modernizr-2.6.2.min.js'); ?>
 
 <?php echo $this->headStyle(); ?>
 
@@ -42,7 +42,5 @@ echo $this->doctype();
 
 <?php echo $this->inlineScript()
     ->prependFile('media/vendor/selectivizr-1.0.2.min.js')
-    ->prependFile('media/vendor/jquery-1.6.2.min.js'); ?>
-
-</body>
+    ->prependFile('media/vendor/jquery-1.10.2.min.js'); ?>
 </html>
