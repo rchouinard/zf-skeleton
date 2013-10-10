@@ -13,7 +13,7 @@ These components are taken from, or are unique enough to credit, other projects 
  * **Favicon** - The included favicon.ico file is taken from the free ["I Love Favorite Icons"](http://icondock.com/free/i-love-favorite-icons) set from [Icon Dock](http://icondock.com).
  * **Humans.txt** - The template included in the project is from the [humans.txt Web site](http://humanstxt.org).
  * **Robots.txt** - While not really taken from, you can find more information about robots.txt at [robotstxt.org](http://www.robotstxt.org)
- * **Modernizr** - A copy of [Modernizr](http://www.modernizr.com) 2.0.6 is included.
+ * **Modernizr** - A copy of [Modernizr](http://www.modernizr.com) 2.6.2 is included.
  * **Selectivizr** - A copy of [Selectivizr](http://selectivizr.com) 1.0.2 is included.
  * **jQuery** - A copy of [jQuery](http://jquery.com) 1.6.2 is included.
  * **ZFDebug** - [ZFDebug](http://code.google.com/p/zfdebug/) is included by default for the development environment. The version included is from [leek's](https://github.com/leek) [fork](https://github.com/leek/zfdebug), which includes an application resource.
